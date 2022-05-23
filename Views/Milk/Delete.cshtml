@@ -1,0 +1,45 @@
+﻿@model MilkShop.Models.Milk
+
+@{
+    ViewData["Title"] = "Xoá sản phẩm";
+}
+
+<h1>Xoá sản phẩm</h1>
+
+<h3>Bạn có chắc là xoá sản phẩm này không ?</h3>
+<div>
+    <h4>Milk</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            Tên sữa
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt class="col-sm-2">
+            Ngày sản xuất
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ReleaseDate)
+        </dd>
+        <dt class="col-sm-2">
+            Hãng sữa
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Genre)
+        </dd>
+        <dt class="col-sm-2">
+            Giá bán
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" />
+        <input type="submit" value="Xoá" class="btn btn-danger" /> |
+        <a asp-action="Index">Quay lại</a>
+    </form>
+</div>
